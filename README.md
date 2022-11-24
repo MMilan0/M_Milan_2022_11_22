@@ -4,6 +4,6 @@ Console app that can create, edit, display and save notes into one file.
 
 ### Features
 - Set custom colors
-- Navigate menu with arrow keys
+- Navigate menu with W / S
 
-Only works with Powershell!
+Only works on windows
