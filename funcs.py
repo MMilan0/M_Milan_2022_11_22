@@ -1,4 +1,8 @@
 from os import system
+import sys
+import msvcrt
+
+write = sys.stdout.write
 
 cursor = 0
 menuText = [
@@ -54,8 +58,26 @@ def openFile():
 	name = input('Enter filename: \x1b[32m')
 	print('\x1b[0m', end='') # Reset style
 
-	file = open(name, 'r')
+	try:
+		file = open(name, 'r')
+	except:
+		print('\x1b[31mFile does not exist.\x1b[0m')
+		exit()
+
+	print(''.join(file.readlines()))
+#while True:
+	#renderMenu()
 
 
+write('asd Hello asdlkj d')
+
+# prototype
+# https://stackoverflow.com/a/22366085
 while True:
-	renderMenu()
+	keypress = str(msvcrt.getch())
+
+	# Backspace
+	if keypress == '\x08':
+		write('\b \b')
+	else:
+		write(keypress)
